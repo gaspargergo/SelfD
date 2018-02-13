@@ -277,7 +277,7 @@
   }
 
   var wheels = [];
-  var numOfWheels = Math.floor(Math.random() * 15)+10;
+  var numOfWheels = Math.floor(Math.random() * 10)+10;
 
   for(var i = 0; i < numOfWheels; i++){
     var xTemp = Math.floor(Math.random() * secondCanvas.width);
@@ -298,7 +298,7 @@
 
   function painting(){
     requestAnimationFrame(painting);
-    ctx.clearRect(0,0,paintingCanvas.width,paintingCanvas.height); //CLEARING BOT CANVASES
+    ctx.clearRect(0,0,paintingCanvas.width,paintingCanvas.height); //CLEARING BOTH CANVASES
     ctx2.clearRect(0,0,secondCanvas.width,secondCanvas.height);
 
     paintedArray.push(new paintedSurface(x,y,100,dy));
@@ -324,10 +324,17 @@
       ctx2.stroke();
     }
 
+    ctx.save();
 
-    ctx.fillStyle = "black"; 
+    ctx.fillStyle = "black";
+    ctx.shadowColor = '#999';
+    ctx.shadowBlur = 20;
+    ctx.shadowOffsetX = 10;
+    ctx.shadowOffsetY = 10;
     ctx.fillRect(0,245,x,10); // the arm
     ctx.fillRect(x,y,100,100);
+
+    ctx.restore();
 
     x += dx;
 
