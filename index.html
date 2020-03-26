@@ -2,7 +2,7 @@
 
 <head>
   <title>instant Art</title>
-  <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lacquer&display=swap" rel="stylesheet">
 
   <style>
     html,body{
@@ -14,7 +14,7 @@
     }
 
     #title {
-      font-family: Shrikhand, cursive;
+      font-family: Lacquer, cursive;
       font-size: 50px;
       letter-spacing: 3px;
       margin-top: 1000px;
@@ -36,7 +36,7 @@
       }
       50% {
         color: red;
-        text-shadow: 0px 0px 40px red;
+        text-shadow: 0px 0px 40px black;
       }
       100% {
         color: white;
@@ -132,15 +132,10 @@
 <body>
   <div id="bg"></div>
   <div id="secondCanvasCont"><canvas id="bgCanvas"></canvas></div>
-  <div id="container"><center><a id="title" onClick="destroy()">instant ART</a>
-    <p id="text">Homage to Homage to NY</p>
+  <div id="container"><center><a id="title" onClick="destroy()">Hommage to Hommage to NY</a><br>
+
 
   <canvas id="paintCanvas" height="600px" width="500px"></canvas>
-  <div id="sizeMenu">
-    <a onClick="changePixelSize('-')" class="plusminus">-</a>
-    <span id="sizeNumber">100</span>
-    <a onClick="changePixelSize('+')" class="plusminus">+</a>
-  </div></div>
 
 </center>
 
@@ -158,20 +153,6 @@
       event.preventDefault();
       }
     }, false);
-
-    var sizes = [1,4,9,25,100,400,900,3600,10000,40000,90000,360000,"NO MORE"]; 
-  var pixelArrayCounter = 4;
-
-
-  function changePixelSize(param){ 
-    if(param == "+" && pixelArrayCounter != sizes.length-1){
-      pixelArrayCounter += 1;
-      }
-      else if(param == "-" && pixelArrayCounter != 0){
-        pixelArrayCounter -= 1;
-      }
-      document.getElementById("sizeNumber").innerHTML = sizes[pixelArrayCounter];
-  }
 
   /*
   SOME SOUND
